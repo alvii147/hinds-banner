@@ -16,7 +16,7 @@ This should result in the following banner that links to the [Palestine Children
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-classic.svg)](https://www.pcrf.net/)
 
-## Variation
+## Variations
 
 Besides the classic banner above, there are other variations available.
 

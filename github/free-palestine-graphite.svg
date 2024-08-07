@@ -34,10 +34,10 @@
     </style>
     <defs>
         <pattern id="fishnets" patternUnits="userSpaceOnUse" width="44" height="44" patternTransform="rotate(45)">
-            <rect x="10" y="0" width="2" height="44" class="colorDark" />
-            <rect x="32" y="0" width="2" height="44" class="colorDark" />
-            <rect x="0" y="10" width="44" height="2" class="colorDark" />
-            <rect x="0" y="32" width="44" height="2" class="colorDark" />
+            <rect x="10" y="0" width="1" height="44" class="colorDark" />
+            <rect x="32" y="0" width="1" height="44" class="colorDark" />
+            <rect x="0" y="10" width="44" height="1" class="colorDark" />
+            <rect x="0" y="32" width="44" height="1" class="colorDark" />
             <ellipse cx="11" cy="11" rx="8" ry="3" class="colorDark" transform="rotate(10, 11, 11)" />
             <ellipse cx="33" cy="11" rx="3" ry="8" class="colorDark" transform="rotate(10, 33, 11)" />
             <ellipse cx="11" cy="33" rx="3" ry="8" class="colorDark" transform="rotate(10, 11, 33)" />

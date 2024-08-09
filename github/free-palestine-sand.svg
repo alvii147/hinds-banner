@@ -34,14 +34,34 @@
     </style>
     <defs>
         <pattern id="fishnets" patternUnits="userSpaceOnUse" width="44" height="44" patternTransform="rotate(45)">
-            <rect x="10" y="0" width="1" height="44" class="colorDark" />
-            <rect x="32" y="0" width="1" height="44" class="colorDark" />
-            <rect x="0" y="10" width="44" height="1" class="colorDark" />
-            <rect x="0" y="32" width="44" height="1" class="colorDark" />
-            <ellipse cx="11" cy="11" rx="8" ry="3" class="colorDark" transform="rotate(10, 11, 11)" />
-            <ellipse cx="33" cy="11" rx="3" ry="8" class="colorDark" transform="rotate(10, 33, 11)" />
-            <ellipse cx="11" cy="33" rx="3" ry="8" class="colorDark" transform="rotate(10, 11, 33)" />
-            <ellipse cx="33" cy="33" rx="8" ry="3" class="colorDark" transform="rotate(10, 33, 33)" />
+            <rect x="10" y="0" width="1" height="44" class="colorDark">
+                <animate attributeName="height" from="0" to="44" dur="1s" fill="freeze"/>
+            </rect>
+            <rect x="32" y="0" width="1" height="44" class="colorDark">
+                <animate attributeName="height" from="0" to="44" dur="1s" fill="freeze"/>
+            </rect>
+            <rect x="0" y="10" width="44" height="1" class="colorDark">
+                <animate attributeName="width" from="0" to="44" dur="1s" fill="freeze"/>
+            </rect>
+            <rect x="0" y="32" width="44" height="1" class="colorDark">
+                <animate attributeName="width" from="0" to="44" dur="1s" fill="freeze"/>
+            </rect>
+            <ellipse cx="11" cy="11" rx="0" ry="0" class="colorDark" transform="rotate(10, 11, 11)">
+                <animate attributeName="rx" from="0" to="8" begin="1s" dur="1s" fill="freeze"/>
+                <animate attributeName="ry" from="0" to="3" begin="1s" dur="1s" fill="freeze"/>
+            </ellipse>
+            <ellipse cx="33" cy="11" rx="0" ry="0" class="colorDark" transform="rotate(10, 33, 11)">
+                <animate attributeName="rx" from="0" to="3" begin="1s" dur="1s" fill="freeze"/>
+                <animate attributeName="ry" from="0" to="8" begin="1s" dur="1s" fill="freeze"/>
+            </ellipse>
+            <ellipse cx="11" cy="33" rx="0" ry="0" class="colorDark" transform="rotate(10, 11, 33)">
+                <animate attributeName="rx" from="0" to="3" begin="1s" dur="1s" fill="freeze"/>
+                <animate attributeName="ry" from="0" to="8" begin="1s" dur="1s" fill="freeze"/>
+            </ellipse>
+            <ellipse cx="33" cy="33" rx="0" ry="0" class="colorDark" transform="rotate(10, 33, 33)">
+                <animate attributeName="rx" from="0" to="8" begin="1s" dur="1s" fill="freeze"/>
+                <animate attributeName="ry" from="0" to="3" begin="1s" dur="1s" fill="freeze"/>
+            </ellipse>
         </pattern>
         <pattern id="olives" patternUnits="userSpaceOnUse" width="12" height="32">
             <polygon points="4,0 3,0 6,1 7,2 8,4 8,16 9,16 6,15 5,14 4,12" class="colorDark" />
@@ -53,24 +73,57 @@
         </radialGradient>
     </defs>
     <rect x="0" y="0" width="900" height="256" class="colorBackground" />
-    <rect x="4" y="0" width="4" height="256" class="colorLight" />
-    <rect x="14" y="0" width="20" height="256" class="colorLight" />
-    <rect x="40" y="0" width="4" height="256" class="colorLight" />
-    <rect x="48" y="0" width="60" height="256" fill="url(#olives)" />
-    <rect x="112" y="0" width="4" height="256" class="colorLight" />
-    <rect x="122" y="0" width="20" height="256" class="colorLight" />
-    <rect x="148" y="0" width="4" height="256" class="colorLight" />
+    <rect x="4" y="0" width="4" height="256" class="colorLight">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="14" y="0" width="20" height="256" class="colorLight">
+        <animate attributeName="y" from="256" to="0" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="40" y="0" width="4" height="256" class="colorLight">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="48" y="0" width="12" height="256" fill="url(#olives)">
+        <animate attributeName="y" from="256" to="0" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="60" y="0" width="12" height="256" fill="url(#olives)">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="72" y="0" width="12" height="256" fill="url(#olives)">
+        <animate attributeName="y" from="256" to="0" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="84" y="0" width="12" height="256" fill="url(#olives)">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="96" y="0" width="12" height="256" fill="url(#olives)">
+        <animate attributeName="y" from="256" to="0" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="108" y="0" width="12" height="256" fill="url(#olives)">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="112" y="0" width="4" height="256" class="colorLight">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="122" y="0" width="20" height="256" class="colorLight">
+        <animate attributeName="y" from="256" to="0" dur="2s" fill="freeze"/>
+    </rect>
+    <rect x="148" y="0" width="4" height="256" class="colorLight">
+        <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>
+    </rect>
     <rect x="158" y="0" width="742" height="256" fill="url(#fishnets)" />
-    <rect x="188" y="30" width="682" height="196" fill-opacity="0.86" class="colorTextBackground" />
+    <rect x="188" y="30" width="682" height="196" fill-opacity="0" class="colorTextBackground">
+        <animate attributeName="fill-opacity" from="0" to="0.86" begin="1s" dur="1s" fill="freeze"/>
+    </rect>
      <text
         x="530"
         y="100"
         text-anchor="middle"
         font-size="56"
         font-family="PlatypiBold"
+        fill-opacity="0"
         class="colorText"
     >
         FREE PALESTINE
+        <animate attributeName="fill-opacity" from="0" to="1" begin="1s" dur="1s" fill="freeze"/>
     </text>
     <text
         x="530"
@@ -78,9 +131,11 @@
         text-anchor="middle"
         font-size="22"
         font-family="PlatypiMedium"
+        fill-opacity="0"
         class="colorText"
     >
         Israel has <tspan dy="5" font-size="32" font-family="Paint Drops" class="colorBlood">murdered</tspan><tspan dy="-5"> tens of thousands of innocent</tspan>
+        <animate attributeName="fill-opacity" from="0" to="1" begin="2s" dur="1s" fill="freeze"/>
     </text>
     <text
         x="530"
@@ -88,9 +143,11 @@
         text-anchor="middle"
         font-size="22"
         font-family="PlatypiMedium"
+        fill-opacity="0"
         class="colorText"
     >
-        Palestinians, while injuring many more. This is a
+        Palestinians, and injured many more. This is a
+        <animate attributeName="fill-opacity" from="0" to="1" begin="2s" dur="1s" fill="freeze"/>
     </text>
     <text
         x="530"
@@ -98,8 +155,10 @@
         text-anchor="middle"
         font-size="52"
         font-family="Paint Drops"
+        fill-opacity="0"
         class="colorBlood"
     >
         genocide
+        <animate attributeName="fill-opacity" from="0" to="1" begin="3s" dur="1s" fill="freeze"/>
     </text>
 </svg>

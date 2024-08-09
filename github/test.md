@@ -1,0 +1,1 @@
+[![](https://github.com/alvii147/hinds-banner/blob/main/github/palestine-stats-classic.svg)](https://www.pcrf.net/)

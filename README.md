@@ -30,9 +30,11 @@ This should result in the following banner that links to the [Palestine Children
 
 [![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/classic)](https://www.pcrf.net/)
 
+The data for this banner is pulled from [Palestine Datasets](https://data.techforpalestine.org/).
+
 ## Variations
 
-Besides the classic banner above, there are other variations available.
+Besides the classic banners above, there are other variations available.
 
 ### Crimson
 

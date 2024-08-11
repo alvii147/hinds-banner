@@ -27,7 +27,7 @@ const fetchGenocideData = async () => {
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', async (req, res) => {
     res.setHeader('Content-Type', 'image/svg+xml');

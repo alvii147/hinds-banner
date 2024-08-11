@@ -95,8 +95,8 @@ app.get('/:banner/:variant?', async (req, res) => {
     }
 
     let colorData = COLOR_DATA.classic;
-    if (req.params.variant && Object.hasOwn(COLOR_DATA, req.params.variant)) {
-        colorData = COLOR_DATA[req.params.variant];
+    if (req.query.variant && Object.hasOwn(COLOR_DATA, req.query.variant)) {
+        colorData = COLOR_DATA[req.query.variant];
     }
 
     const genocideData = await fetchGenocideData();

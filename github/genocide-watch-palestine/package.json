@@ -1,0 +1,16 @@
+{
+  "name": "genocide-watch-palestine",
+  "version": "1.0.0",
+  "description": "An SVG banner displaying the number of Palestinians and Palestinian children murdered by Israel's genocidal forces.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zahin Zaman",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

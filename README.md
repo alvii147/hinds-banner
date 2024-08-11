@@ -6,7 +6,9 @@ This project contains banners that can be used in GitHub profiles and READMEs to
 
 ## Get Started
 
-To add a banner to your GitHub project or profile, add the markdown snippet to your README:
+### Free Palestine Banner
+
+The **Free Palestine Banner** raises awareness around the genocide being committed by Israel on Palestinians. To add this banner to your GitHub project or profile, add the following markdown snippet to your README:
 
 ```md
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-classic.svg)](https://www.pcrf.net/)
@@ -15,6 +17,18 @@ To add a banner to your GitHub project or profile, add the markdown snippet to y
 This should result in the following banner that links to the [Palestine Children's Relief Fund website](https://www.pcrf.net/):
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-classic.svg)](https://www.pcrf.net/)
+
+### Genocide Watch Banner
+
+The **Genocide Watch Banner** returns a live count of Palestinians and Palestinian children murdered by Israel. To add this banner to your GitHub project or profile, add the following markdown snippet to your README:
+
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/classic)](https://www.pcrf.net/)
+```
+
+This should result in the following banner that links to the [Palestine Children's Relief Fund website](https://www.pcrf.net/):
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/classic)](https://www.pcrf.net/)
 
 ## Variations
 
@@ -28,6 +42,12 @@ Besides the classic banner above, there are other variations available.
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-crimson.svg)](https://www.pcrf.net/)
 
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/crimson)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/crimson)](https://www.pcrf.net/)
+
 ### Forest
 
 ```md
@@ -35,6 +55,12 @@ Besides the classic banner above, there are other variations available.
 ```
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-forest.svg)](https://www.pcrf.net/)
+
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/forest)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/forest)](https://www.pcrf.net/)
 
 ### Graphite
 
@@ -44,6 +70,12 @@ Besides the classic banner above, there are other variations available.
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-graphite.svg)](https://www.pcrf.net/)
 
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/graphite)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/graphite)](https://www.pcrf.net/)
+
 ### Olive
 
 ```md
@@ -51,6 +83,12 @@ Besides the classic banner above, there are other variations available.
 ```
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-olive.svg)](https://www.pcrf.net/)
+
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/olive)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/olive)](https://www.pcrf.net/)
 
 ### Sand
 
@@ -60,6 +98,12 @@ Besides the classic banner above, there are other variations available.
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-sand.svg)](https://www.pcrf.net/)
 
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/sand)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/sand)](https://www.pcrf.net/)
+
 ### Tatreez
 
 ```md
@@ -67,3 +111,9 @@ Besides the classic banner above, there are other variations available.
 ```
 
 [![Free Palestine](https://github.com/alvii147/hinds-banner/blob/main/github/free-palestine-tatreez.svg)](https://www.pcrf.net/)
+
+```md
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/tatreez)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch Palestine](https://genocide-watch-palestine.vercel.app/tatreez)](https://www.pcrf.net/)

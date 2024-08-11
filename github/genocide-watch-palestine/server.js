@@ -4,6 +4,64 @@ const path = require('path');
 
 const PORT = 3000;
 const PALESTINE_DATASETS_API_SUMMARY_URL = 'https://data.techforpalestine.org/api/v3/summary.min.json';
+const COLOR_DATA = {
+    classic: {
+        colorBackground: 'FFFFFF',
+        colorTextBackground: 'FFFFFF',
+        colorLight: '737373',
+        colorText: '333333',
+        colorDark: '1A1A1A',
+        colorBlood: 'FF1A1A',
+    },
+    crimson: {
+        colorBackground: 'FFF7F0',
+        colorTextBackground: 'FFF7F0',
+        colorLight: 'FF8080',
+        colorText: '660000',
+        colorDark: 'FF3333',
+        colorBlood: 'FF1A1A',
+    },
+    forest: {
+        colorBackground: '001A00',
+        colorTextBackground: '003300',
+        colorLight: '008000',
+        colorText: '99FF99',
+        colorDark: '008000',
+        colorBlood: 'FF1A1A',
+    },
+    graphite: {
+        colorBackground: '0D0D0D',
+        colorTextBackground: '404040',
+        colorLight: '666666',
+        colorText: 'F2F2F2',
+        colorDark: 'D9D9D9',
+        colorBlood: 'FF1A1A',
+    },
+    olive: {
+        colorBackground: '666633',
+        colorTextBackground: 'CCCC99',
+        colorLight: '1A1A1A',
+        colorText: '333333',
+        colorDark: '1A1A1A',
+        colorBlood: 'FF1A1A',
+    },
+    sand: {
+        colorBackground: '997300',
+        colorTextBackground: 'FFD966',
+        colorLight: '1A1A1A',
+        colorText: '333333',
+        colorDark: '1A1A1A',
+        colorBlood: 'FF1A1A',
+    },
+    tatreez: {
+        colorBackground: '1A0A00',
+        colorTextBackground: '4D1F00',
+        colorLight: 'CC5200',
+        colorText: 'FFB380',
+        colorDark: 'E65C00',
+        colorBlood: 'FF1A1A',
+    },
+};
 
 const numberWithCommas = (n) => {
     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -29,9 +87,18 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', async (req, res) => {
+app.get('/:variant?', async (req, res) => {
+    const genocideData = await fetchGenocideData();
+    let colorData = COLOR_DATA.classic;
+    if (req.params.variant && Object.hasOwn(COLOR_DATA, req.params.variant)) {
+        colorData = COLOR_DATA[req.params.variant];
+    }
+
     res.setHeader('Content-Type', 'image/svg+xml');
-    res.render('index', await fetchGenocideData());
+    res.render('index', {
+        ...colorData,
+        ...genocideData,
+    });
 });
 
 app.listen(PORT, () => {

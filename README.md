@@ -1,10 +1,10 @@
 # Hind's Banner 🇵🇸
 
-This project contains banners that can be used in GitHub profiles and READMEs to show support for Palestine, and to raise awareness around Israel's war crimes. This repository was named in honor of [Hind Rajab](https://en.wikipedia.org/wiki/Killing_of_Hind_Rajab).
+This project provides SVG banners that can be used in GitHub profiles and READMEs to show support for Palestine, and to raise awareness around Israel's war crimes. This repository was named in honor of [Hind Rajab](https://en.wikipedia.org/wiki/Killing_of_Hind_Rajab).
 
 > If you'd like to request a variation in color, styles, or text for any of these, please don't hestitate to create an issue with details, and I will try my best to accommodate.
 
-## Get Started
+## Usage
 
 ### Free Palestine Banner
 

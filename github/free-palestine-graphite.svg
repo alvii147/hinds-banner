@@ -71,10 +71,6 @@
             <polygon points="4,0 3,0 6,1 7,2 8,4 8,16 9,16 6,15 5,14 4,12" class="colorDark" />
             <polygon points="4,20 5,18 6,17 9,16 8,16 8,28 7,30 6,31 3,32 4,32" class="colorDark" />
         </pattern>
-        <radialGradient id="rgrad">
-            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
-        </radialGradient>
     </defs>
     <rect x="0" y="0" width="900" height="256" class="colorBackground" />
     <rect x="4" y="0" width="4" height="256" class="colorLight">
@@ -117,7 +113,7 @@
     <rect x="188" y="30" width="682" height="196" fill-opacity="0" class="colorTextBackground">
         <animate attributeName="fill-opacity" from="0" to="0.86" begin="1s" dur="1s" fill="freeze"/>
     </rect>
-     <text
+    <text
         x="530"
         y="100"
         text-anchor="middle"

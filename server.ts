@@ -1,12 +1,24 @@
-const express = require('express');
-const axios = require('axios');
-const path = require('path');
+import express, { Express, Request, Response } from 'express';
+import axios, { AxiosResponse } from 'axios';
+import path from 'path';
 
-const PORT = 3000;
-const PALESTINE_DATASETS_API_SUMMARY_URL = 'https://data.techforpalestine.org/api/v3/summary.min.json';
-const BANNERS = ['free-palestine', 'genocide-watch'];
-const COLOR_DATA = {
-    classic: {
+const PORT: number = 3000;
+const PALESTINE_DATASETS_API_SUMMARY_URL: string = 'https://data.techforpalestine.org/api/v3/summary.min.json';
+const BANNERS: string[] = ['free-palestine', 'genocide-watch'];
+
+interface ColorData {
+    colorBackground: string;
+    colorTextBackground: string;
+    colorLight: string;
+    colorText: string;
+    colorDark: string;
+    colorBlood: string;
+};
+
+type Variant = 'classic' | 'crimson' | 'forest' | 'graphite' | 'olive' | 'sand' | 'tatreez';
+
+const COLOR_DATA: Record<Variant, ColorData> = {
+    'classic': {
         colorBackground: 'FFFFFF',
         colorTextBackground: 'FFFFFF',
         colorLight: '737373',
@@ -14,7 +26,7 @@ const COLOR_DATA = {
         colorDark: '1A1A1A',
         colorBlood: 'FF1A1A',
     },
-    crimson: {
+    'crimson': {
         colorBackground: 'FFF7F0',
         colorTextBackground: 'FFF7F0',
         colorLight: 'FF8080',
@@ -22,7 +34,7 @@ const COLOR_DATA = {
         colorDark: 'FF3333',
         colorBlood: 'FF1A1A',
     },
-    forest: {
+    'forest': {
         colorBackground: '001A00',
         colorTextBackground: '003300',
         colorLight: '008000',
@@ -30,7 +42,7 @@ const COLOR_DATA = {
         colorDark: '008000',
         colorBlood: 'FF1A1A',
     },
-    graphite: {
+    'graphite': {
         colorBackground: '0D0D0D',
         colorTextBackground: '404040',
         colorLight: '666666',
@@ -38,7 +50,7 @@ const COLOR_DATA = {
         colorDark: 'D9D9D9',
         colorBlood: 'FF1A1A',
     },
-    olive: {
+    'olive': {
         colorBackground: '666633',
         colorTextBackground: 'CCCC99',
         colorLight: '1A1A1A',
@@ -46,7 +58,7 @@ const COLOR_DATA = {
         colorDark: '1A1A1A',
         colorBlood: 'FF1A1A',
     },
-    sand: {
+    'sand': {
         colorBackground: '997300',
         colorTextBackground: 'FFD966',
         colorLight: '1A1A1A',
@@ -54,7 +66,7 @@ const COLOR_DATA = {
         colorDark: '1A1A1A',
         colorBlood: 'FF1A1A',
     },
-    tatreez: {
+    'tatreez': {
         colorBackground: '1A0A00',
         colorTextBackground: '4D1F00',
         colorLight: 'CC5200',
@@ -64,12 +76,12 @@ const COLOR_DATA = {
     },
 };
 
-const numberWithCommas = (n) => {
+const numberWithCommas = (n: number): string => {
     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 const fetchGenocideData = async () => {
-    const response = await axios.get(PALESTINE_DATASETS_API_SUMMARY_URL);
+    const response: AxiosResponse = await axios.get(PALESTINE_DATASETS_API_SUMMARY_URL);
     const totalKilledInGaza = response.data.gaza.killed.total;
     const totalKilledInWestBank = response.data.west_bank.killed.total;
     const childrenKilledInGaza = response.data.gaza.killed.children;
@@ -83,20 +95,20 @@ const fetchGenocideData = async () => {
     };
 };
 
-const app = express();
+const app: Express = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/:banner/:variant?', async (req, res) => {
+app.get('/:banner/:variant?', async (req: Request, res: Response) => {
     if (!BANNERS.includes(req.params.banner)) {
         res.sendStatus(404);
         return;
     }
 
-    let colorData = COLOR_DATA.classic;
-    if (req.query.variant && Object.hasOwn(COLOR_DATA, req.query.variant)) {
-        colorData = COLOR_DATA[req.query.variant];
+    let colorData = COLOR_DATA['classic'];
+    if (req.query.variant && typeof req.query.variant === 'string' && COLOR_DATA.hasOwnProperty(req.query.variant as string)) {
+        colorData = COLOR_DATA[req.query.variant as Variant];
     }
 
     const genocideData = await fetchGenocideData();

@@ -1,6 +1,7 @@
-import express, { Express, Request, Response } from 'express';
+import express = require('express');
+import { Express, Request, Response } from 'express';
 import axios, { AxiosResponse } from 'axios';
-import path from 'path';
+import * as path from 'path';
 
 const PORT: number = 3000;
 const PALESTINE_DATASETS_API_SUMMARY_URL: string = 'https://data.techforpalestine.org/api/v3/summary.min.json';
@@ -98,7 +99,7 @@ const fetchGenocideData = async () => {
 const app: Express = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 
 app.get('/:banner/:variant?', async (req: Request, res: Response) => {
     if (!BANNERS.includes(req.params.banner)) {

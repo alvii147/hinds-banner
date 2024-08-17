@@ -48,7 +48,7 @@ app.get('/genocide-watch/:variant?', async (req: Request, res: Response) => {
 
     const dataOptions: object = {
         palestiniansMurdered: formatNumberWithCommas(summary.gaza.killed.total + summary.west_bank.killed.total) + '+',
-        palestinianChildrenMurdered: formatNumberWithCommas((summary.gaza.killed.children as number) + (summary.west_bank.killed.children as number)) + '+',
+        palestinianChildrenMurdered: formatNumberWithCommas(summary.gaza.killed.children + summary.west_bank.killed.children) + '+',
     };
 
     renderSVG(res, 'genocide-watch', {

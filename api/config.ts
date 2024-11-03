@@ -25,7 +25,7 @@ export const VARIANT_COLOR_OPTIONS: Record<Variant, ColorOptions> = {
     },
     'crimson': {
         colorBackgroundPrimary: 'FFF7F0',
-        colorBackgroundSecondary: 'FFCCCC',
+        colorBackgroundSecondary: 'FFE4CC',
         colorTextBackground: 'FFF7F0',
         colorLight: 'FF8080',
         colorText: '660000',

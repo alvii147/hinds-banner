@@ -32,9 +32,9 @@ This should result in the following banner that links to the [Palestine Children
 
 The data for this banner is pulled from [Palestine Datasets](https://data.techforpalestine.org/).
 
-## Variations
+## Variants
 
-Besides the classic banners above, there are other variations available.
+Besides the classic banners above, there are other variants available.
 
 ### Crimson
 
@@ -91,6 +91,20 @@ Besides the classic banners above, there are other variations available.
 ```
 
 [![Genocide Watch](https://hinds-banner.vercel.app/genocide-watch?variant=olive)](https://www.pcrf.net/)
+
+### Plum
+
+```md
+[![Free Palestine](https://hinds-banner.vercel.app/free-palestine?variant=plum)](https://www.pcrf.net/)
+```
+
+[![Free Palestine](https://hinds-banner.vercel.app/free-palestine?variant=plum)](https://www.pcrf.net/)
+
+```md
+[![Genocide Watch](https://hinds-banner.vercel.app/genocide-watch?variant=plum)](https://www.pcrf.net/)
+```
+
+[![Genocide Watch](https://hinds-banner.vercel.app/genocide-watch?variant=plum)](https://www.pcrf.net/)
 
 ### Sand
 

@@ -11,7 +11,7 @@ export interface ColorOptions {
     colorBlood: string;
 };
 
-export type Variant = 'classic' | 'crimson' | 'forest' | 'graphite' | 'olive' | 'sand' | 'tatreez';
+export type Variant = 'classic' | 'crimson' | 'forest' | 'graphite' | 'olive' | 'plum' | 'sand' | 'tatreez';
 
 export const VARIANT_COLOR_OPTIONS: Record<Variant, ColorOptions> = {
     'classic': {
@@ -57,6 +57,15 @@ export const VARIANT_COLOR_OPTIONS: Record<Variant, ColorOptions> = {
         colorLight: '1A1A1A',
         colorText: '333333',
         colorDark: '1A1A1A',
+        colorBlood: 'FF1A1A',
+    },
+    'plum': {
+        colorBackgroundPrimary: '660033',
+        colorBackgroundSecondary: '000033',
+        colorTextBackground: 'DCB3D3',
+        colorLight: 'FFE6F2',
+        colorText: '333333',
+        colorDark: 'FFB3D7',
         colorBlood: 'FF1A1A',
     },
     'sand': {

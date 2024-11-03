@@ -1,8 +1,9 @@
 <svg width="900" height="256" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Free Palestine</title>
+    <%- include('./partials/gradient.ejs'); %>
     <style>
         .colorBackground {
-            fill: #<%= colorBackground %>;
+            fill: url(#gradientBackground);
         }
         .colorTextBackground {
             fill: #<%= colorTextBackground %>;
@@ -21,6 +22,7 @@
         }
         <%- include('./partials/fonts.ejs'); %>
     </style>
+    <rect x="0" y="0" width="900" height="256" class="colorBackground" />
     <%- include('./partials/keffiyeh.ejs'); %>
     <rect x="188" y="30" width="682" height="196" fill-opacity="0" class="colorTextBackground">
         <animate attributeName="fill-opacity" from="0" to="0.86" begin="1s" dur="1s" fill="freeze"/>

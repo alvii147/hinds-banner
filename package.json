@@ -20,7 +20,8 @@
   "dependencies": {
     "axios": "^1.7.4",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "redis": "^4.7.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",

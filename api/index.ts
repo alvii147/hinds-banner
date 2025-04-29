@@ -1,21 +1,12 @@
 import express = require('express');
+const redis = require('redis');
 import { Express, Request, Response } from 'express';
+import { RedisClientType } from 'redis';
 import * as path from 'path';
 import { PORT, ColorOptions, Variant, VARIANT_COLOR_OPTIONS } from './config';
 import { getSummary, SummaryData } from './data';
-import { formatNumberWithCommas } from './utils';
-
-const handleBadRequest = (res: Response, message: string) => {
-    res.json({
-        message: message,
-    });
-    res.sendStatus(400);
-};
-
-const renderSVG = (res: Response, view: string, options: object) => {
-    res.setHeader('Content-Type', 'image/svg+xml');
-    res.render(view, options);
-};
+import { connectRedis, getGenocideWatchData, getRedisOptions, setGenocideWatchData } from './redis';
+import { renderSVG, handleBadRequest, formatNumberWithCommas } from './utils';
 
 const app: Express = express();
 
@@ -44,12 +35,26 @@ app.get('/genocide-watch/:variant?', async (req: Request, res: Response) => {
 
     const variant: Variant = req.query.variant ? req.query.variant as Variant : 'classic';
     const colorOptions: ColorOptions = VARIANT_COLOR_OPTIONS[variant];
-    const summary: SummaryData = await getSummary();
 
+    const redisClient: RedisClientType = redis.createClient(getRedisOptions());
+    await connectRedis(redisClient);
+
+    const cachedDataOptions: object | null = await getGenocideWatchData(redisClient);
+    if (cachedDataOptions) {
+        renderSVG(res, 'genocide-watch', {
+            ...colorOptions,
+            ...cachedDataOptions,
+        });
+        return;
+    }
+
+    const summary: SummaryData = await getSummary();
     const dataOptions: object = {
         palestiniansMurdered: formatNumberWithCommas(summary.gaza.killed.total + summary.west_bank.killed.total) + '+',
         palestinianChildrenMurdered: formatNumberWithCommas(summary.gaza.killed.children + summary.west_bank.killed.children) + '+',
     };
+
+    await setGenocideWatchData(redisClient, dataOptions);
 
     renderSVG(res, 'genocide-watch', {
         ...colorOptions,

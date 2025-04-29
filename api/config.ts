@@ -87,3 +87,5 @@ export const VARIANT_COLOR_OPTIONS: Record<Variant, ColorOptions> = {
         colorBlood: 'FF1A1A',
     },
 };
+
+export const REDIS_CACHE_KEY_GENOCIDE_WATCH: string = 'data:genocide-watch';

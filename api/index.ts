@@ -58,6 +58,8 @@ app.get('/genocide-watch-cached/:variant?', async (req: Request, res: Response) 
     const colorOptions: ColorOptions = VARIANT_COLOR_OPTIONS[variant];
 
     const redisClient: RedisClientType = redis.createClient(getRedisOptions());
+    redisClient.on('error', (error: any) => console.error(error));
+
     await connectRedis(redisClient);
 
     const cachedDataOptions: object | null = await getGenocideWatchData(redisClient);

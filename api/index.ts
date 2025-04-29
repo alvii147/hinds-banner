@@ -36,6 +36,27 @@ app.get('/genocide-watch/:variant?', async (req: Request, res: Response) => {
     const variant: Variant = req.query.variant ? req.query.variant as Variant : 'classic';
     const colorOptions: ColorOptions = VARIANT_COLOR_OPTIONS[variant];
 
+    const summary: SummaryData = await getSummary();
+    const dataOptions: object = {
+        palestiniansMurdered: formatNumberWithCommas(summary.gaza.killed.total + summary.west_bank.killed.total) + '+',
+        palestinianChildrenMurdered: formatNumberWithCommas(summary.gaza.killed.children + summary.west_bank.killed.children) + '+',
+    };
+
+    renderSVG(res, 'genocide-watch', {
+        ...colorOptions,
+        ...dataOptions,
+    });
+});
+
+app.get('/genocide-watch-cached/:variant?', async (req: Request, res: Response) => {
+    if (req.query.variant && !VARIANT_COLOR_OPTIONS.hasOwnProperty(req.query.variant as string)) {
+        handleBadRequest(res, 'invalid variant');
+        return;
+    }
+
+    const variant: Variant = req.query.variant ? req.query.variant as Variant : 'classic';
+    const colorOptions: ColorOptions = VARIANT_COLOR_OPTIONS[variant];
+
     const redisClient: RedisClientType = redis.createClient(getRedisOptions());
     await connectRedis(redisClient);
 

@@ -133,3 +133,7 @@ Besides the classic banners above, there are other variants available.
 ```
 
 [![Genocide Watch](https://hinds-banner.vercel.app/genocide-watch?variant=tatreez)](https://www.pcrf.net/)
+
+## Acknowledgements
+
+* [Palestine Datasets](https://data.techforpalestine.org/)

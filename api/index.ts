@@ -17,8 +17,6 @@ app.get('/', (req: Request, res: Response) => {
     res.render('index');
 });
 
-app.use('/favicon.ico', express.static('images/favicon.ico'));
-
 app.get('/free-palestine/:variant?', async (req: Request, res: Response) => {
     if (req.query.variant && !VARIANT_COLOR_OPTIONS.hasOwnProperty(req.query.variant as string)) {
         handleBadRequest(res, 'invalid variant');
@@ -67,6 +65,11 @@ app.get('/genocide-watch/:variant?', async (req: Request, res: Response) => {
         ...colorOptions,
         ...dataOptions,
     });
+});
+
+app.get('/robots.txt', (req: Request, res: Response) => {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow:");
 });
 
 app.listen(PORT, () => {

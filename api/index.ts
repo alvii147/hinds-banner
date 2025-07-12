@@ -13,6 +13,10 @@ const app: Express = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 
+app.get('/', (req: Request, res: Response) => {
+    res.render('index');
+});
+
 app.get('/free-palestine/:variant?', async (req: Request, res: Response) => {
     if (req.query.variant && !VARIANT_COLOR_OPTIONS.hasOwnProperty(req.query.variant as string)) {
         handleBadRequest(res, 'invalid variant');

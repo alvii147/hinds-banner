@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Banner Configurator</title>
+    <style>
+        <%- include('./partials/fonts.ejs'); %>
+        body {
+            max-width: 50%;
+            min-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #F1D0C6;
+            background: linear-gradient(to right, #f1dfda, #def4df);
+        }
+
+        .mainContainer {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 8px rgb(162, 162, 162);
+        }
+
+        .inputContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 0px 10px 0px;
+        }
+
+        .labelContainer {
+            flex: 1;
+            padding: 0px 6px 0px 0px;
+        }
+
+        .bannerContainer {
+            display: flex;
+            justify-content: center;
+            padding: 0px 20px 0px 20px;
+        }
+
+        .bannerImgContainer {
+            max-width: 900px;
+        }
+
+        .banner {
+            box-shadow: 0 6px 12px rgb(209, 209, 209);
+        }
+
+        .heading {
+            font-family: 'CabinBold';
+            color: #333333;
+        }
+
+        .text {
+            font-family: 'CabinRegular';
+            color: #333333;
+        }
+
+        .textBold {
+            font-family: 'CabinBold';
+            color: #333333;
+        }
+
+        .link {
+            color: #BE431E;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .link:hover {
+            color: #872609;
+            border-bottom: 1px solid #872609;
+            text-shadow: 0 1px 2px rgba(0, 68, 153, 0.2);
+        }
+
+        .link:active {
+            color: #BE431E;
+            transform: translateY(1px);
+        }
+
+        .link:visited {
+            color: #BE431E;
+        }
+
+        .link:visited:hover {
+            color: #872609;
+            border-bottom-color: #872609;
+        }
+
+        .dropdown, .inputtext {
+            flex: 9;
+            padding: 6px 8px;
+            font-size: 16px;
+            font-family: 'CabinRegular';
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            color: #333333;
+            appearance: none;
+        }
+
+        .dropdown {
+            cursor: pointer;
+        }
+
+        .dropdown:focus, .inputtext:focus {
+            outline: none;
+            border-color: #189f3c;
+            box-shadow: 0 0 0 3px rgba(0, 255, 42, 0.2);
+        }
+
+        .codeBlockContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .codeBlock {
+            flex: 1;
+            background-color: #F5F5F5;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            overflow-x: auto;
+            user-select: all;
+        }
+
+        .copyButton {
+            padding: 7px;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #F5F5F5;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .copyButton:hover {
+            background-color: #E0E0E0;
+        }
+
+        .copyButton:active {
+            transform: scale(0.95);
+        }
+
+        .dividerContainer {
+            padding: 40px 0px 20px 0px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #CCCCCC;
+        }
+
+        .footerContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footerBadge {
+            box-shadow: 3px 3px 4px #CCCCCC;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 1300px) {
+            .footerContainer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+        <h1 class="heading">
+            Hind's Banner 🇵🇸
+        </h1>
+        <p class="text">
+            Hind's Banner provides SVG banners that can be used in GitHub profiles and READMEs to show support for Palestine, and to raise awareness around Israel's war crimes. This project was named in honor of <a class="link" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Killing_of_Hind_Rajab">Hind Rajab</a>.
+        </p>
+        <div class="inputContainer">
+            <div class="labelContainer">
+                <label class="textBold" for="banner-type">Banner:</label>
+            </div>
+            <select
+                id="banner-type"
+                class="dropdown"
+                onchange="updateBanner()"
+            >
+                <option value="free-palestine">Free Palestine</option>
+                <option value="genocide-watch">Genocide Watch</option>
+            </select>
+        </div>
+        <div class="inputContainer">
+            <div class="labelContainer">
+                <label class="textBold" for="banner-variant">Variant:</label>
+            </div>
+            <select
+                id="banner-variant"
+                class="dropdown"
+                onchange="updateBanner()"
+            >
+                <option value="classic">Classic</option>
+                <option value="crimson">Crimson</option>
+                <option value="forest">Forest</option>
+                <option value="graphite">Graphite</option>
+                <option value="olive">Olive</option>
+                <option value="plum">Plum</option>
+                <option value="sand">Sand</option>
+                <option value="tatreez">Tatreez</option>
+            </select>
+        </div>
+        <div class="inputContainer">
+            <div class="labelContainer">
+                <label class="textBold" for="banner-redirect-url">Redirect:</label>
+            </div>
+            <input
+                id="banner-redirect-url"
+                class="inputtext"
+                type="text"
+                value="https://www.pcrf.net"
+                onchange="updateBanner()"
+            />
+        </div>
+        <h2 class="heading">
+            Markdown
+        </h2>
+        <div class="codeBlockContainer">
+            <pre id="markdownSnippet" class="codeBlock">[![Free Palestine](https://hinds-banner.vercel.app/free-palestine?variant=classic)](https://www.pcrf.net/)</pre>
+            <button
+                class="copyButton"
+                onclick="copyMarkdown()"
+            >
+                <%- include('./partials/copy.ejs', { color: '333333'}); %>
+            </button>
+        </div>
+        <h2 class="heading">
+            HTML
+        </h2>
+        <div class="codeBlockContainer">
+            <pre id="htmlSnippet" class="codeBlock">&lt;a target="_blank" rel="noopener noreferrer" href="https://www.pcrf.net"&gt;
+  &lt;img alt="Free Palestine" src="https://hinds-banner.vercel.app/free-palestine?variant=classic" />
+&lt;/a&gt;</pre>
+            <button
+                class="copyButton"
+                onclick="copyHTML()"
+            >
+                <%- include('./partials/copy.ejs', { color: '333333'}); %>
+            </button>
+        </div>
+        <h2 class="heading">
+            Preview
+        </h2>
+        <div class="bannerContainer">
+            <div class="bannerImgContainer">
+                <a
+                    id="banner-link"
+                    class="link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.pcrf.net"
+                >
+                    <img
+                        id="banner"
+                        class="banner"
+                        alt="Free Palestine"
+                        src="https://hinds-banner.vercel.app/free-palestine?variant=classic"
+                        width="100%"
+                    />
+                </a>
+            </div>
+        </div>
+        <div class="dividerContainer">
+            <hr class="divider" />
+        </div>
+        <div class="footerContainer">
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/alvii147/hinds-banner"
+            >
+                <img
+                    class="footerBadge"
+                    alt="GitHub Stargazers"
+                    src="https://img.shields.io/github/stars/alvii147/hinds-banner?logo=github&style=for-the-badge&color=181717"
+                />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/alvii147/hinds-banner/blob/main/LICENSE"
+            >
+                <img
+                    class="footerBadge"
+                    alt="License"
+                    src="https://img.shields.io/github/license/alvii147/hinds-banner?style=for-the-badge"
+                />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.pcrf.net"
+            >
+                <img
+                    class="footerBadge"
+                    alt="PCRF"
+                    src="https://img.shields.io/badge/PCRF-A60001?logo=data:image/png;base64,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&style=for-the-badge"
+                />
+            </a>
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://data.techforpalestine.org/"
+            >
+                <img
+                    class="footerBadge"
+                    alt="Palestine Datasets"
+                    src="https://img.shields.io/badge/Palestine%20Datasets-404040?logo=data:image/png;base64,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&style=for-the-badge"
+                />
+            </a>
+        </div>
+    </div>
+    <script>
+        const baseURL = 'https://hinds-banner.vercel.app';
+        const altTextMap = {
+            'free-palestine': 'Free Palestine',
+            'genocide-watch': 'Genocide Watch',
+        };
+
+        const prependURLScheme = (url) => {
+            if (!/^[a-zA-Z][a-zA-Z\d+\-.]*:/.test(url)) {
+                console.log('https://' + url);
+                return 'https://' + url;
+            }
+
+            console.log('nope ' + url);
+            return url;
+        };
+
+        const copyMarkdown = () => {
+            const markdownPreBlock = document.getElementById('markdownSnippet');
+            if (!markdownPreBlock) {
+                return;
+            }
+
+            navigator.clipboard.writeText(markdownPreBlock.textContent);
+        };
+
+        const copyHTML = () => {
+            const htmlPreBlock = document.getElementById('htmlSnippet');
+            if (!htmlPreBlock) {
+                return;
+            }
+
+            navigator.clipboard.writeText(htmlPreBlock.textContent);
+        };
+
+        const updateBanner = () => {
+            const markdownPreBlock = document.getElementById('markdownSnippet');
+            if (!markdownPreBlock) {
+                return;
+            }
+
+            const htmlPreBlock = document.getElementById('htmlSnippet');
+            if (!htmlPreBlock) {
+                return;
+            }
+
+            const bannerLink = document.getElementById('banner-link');
+            if (!bannerLink) {
+                return;
+            }
+
+            const bannerImg = document.getElementById('banner');
+            if (!bannerImg) {
+                return;
+            }
+
+            const bannerTypeSelect = document.getElementById('banner-type');
+            if (!bannerTypeSelect) {
+                return;
+            }
+
+            const bannerVariantSelect = document.getElementById('banner-variant');
+            if (!bannerVariantSelect) {
+                return;
+            }
+
+            const bannerRedirectInput = document.getElementById('banner-redirect-url');
+            if (!bannerRedirectInput) {
+                return;
+            }
+
+            const altText = altTextMap[bannerTypeSelect.value];
+            const url = `${baseURL}/${bannerTypeSelect.value}?variant=${bannerVariantSelect.value}`;
+            const redirect = prependURLScheme(bannerRedirectInput.value);
+
+            markdownPreBlock.textContent = `[![${altText}](${url})](${redirect})`;
+            htmlPreBlock.textContent = `<a target="_blank" rel="noopener noreferrer" href="${redirect}">
+  <img alt="${altText}" src="${url}" />
+</a>`
+
+            bannerLink.href = redirect;
+
+            bannerImg.altText = altText;
+            bannerImg.src = url;
+        };
+    </script>
+</body>
+</html>

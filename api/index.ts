@@ -17,6 +17,8 @@ app.get('/', (req: Request, res: Response) => {
     res.render('index');
 });
 
+app.use('/favicon.ico', express.static('images/favicon.ico'));
+
 app.get('/free-palestine/:variant?', async (req: Request, res: Response) => {
     if (req.query.variant && !VARIANT_COLOR_OPTIONS.hasOwnProperty(req.query.variant as string)) {
         handleBadRequest(res, 'invalid variant');

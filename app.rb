@@ -1,10 +1,10 @@
 require "sinatra"
-require "yaml"
 
+require_relative "lib/config"
 require_relative "lib/palestine_datasets"
 require_relative "lib/utils"
 
-config = YAML.load_file("config.yaml")
+config = Config.load
 
 get "/free-palestine" do
   variant_config = config["variants"][params["variant"]] ||= config["variants"]["classic"]

@@ -49,6 +49,10 @@ get "/genocide-watch" do
   erb :"genocide-watch"
 end
 
+get "/ping" do
+  "pong"
+end
+
 get "/" do
   @deployment_url = config["deployment"]["url"]
   erb :index

@@ -6,4 +6,4 @@ RUN bundle install
 
 EXPOSE 3000
 
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "3000"]
+CMD ["bundle", "exec", "rackup", "--env", "production", "--host", "0.0.0.0", "-p", "3000"]

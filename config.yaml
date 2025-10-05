@@ -1,0 +1,73 @@
+deployment:
+  url: https://hinds-banner.fly.dev
+
+palestine-datasets:
+  url: https://data.techforpalestine.org
+
+port: 3000
+
+variants:
+  classic:
+    color_background_primary: 'FFFFFF'
+    color_background_secondary: 'E6E6E6'
+    color_text_background: 'FFFFFF'
+    color_light: '737373'
+    color_text: '333333'
+    color_dark: '1A1A1A'
+    color_blood: 'FF1A1A'
+  crimson:
+    color_background_primary: 'FFF7F0'
+    color_background_secondary: 'FFE4CC'
+    color_text_background: 'FFF7F0'
+    color_light: 'FF8080'
+    color_text: '660000'
+    color_dark: 'FF3333'
+    color_blood: 'FF1A1A'
+  forest:
+    color_background_primary: '001A00'
+    color_background_secondary: '1F4D00'
+    color_text_background: '003300'
+    color_light: '008000'
+    color_text: '99FF99'
+    color_dark: '008000'
+    color_blood: 'FF1A1A'
+  graphite:
+    color_background_primary: '0D0D0D'
+    color_background_secondary: '4D4D4D'
+    color_text_background: '404040'
+    color_light: '666666'
+    color_text: 'F2F2F2'
+    color_dark: 'D9D9D9'
+    color_blood: 'FF1A1A'
+  olive:
+    color_background_primary: '666633'
+    color_background_secondary: '446600'
+    color_text_background: 'CCCC99'
+    color_light: '1A1A1A'
+    color_text: '333333'
+    color_dark: '1A1A1A'
+    color_blood: 'FF1A1A'
+  plum:
+    color_background_primary: '660033'
+    color_background_secondary: '000033'
+    color_text_background: 'DCB3D3'
+    color_light: 'FFE6F2'
+    color_text: '333333'
+    color_dark: 'FFB3D7'
+    color_blood: 'FF1A1A'
+  sand:
+    color_background_primary: '997300'
+    color_background_secondary: '996100'
+    color_text_background: 'FFD966'
+    color_light: '1A1A1A'
+    color_text: '333333'
+    color_dark: '1A1A1A'
+    color_blood: 'FF1A1A'
+  tatreez:
+    color_background_primary: '1A0A00'
+    color_background_secondary: '662700'
+    color_text_background: '4D1F00'
+    color_light: 'CC5200'
+    color_text: 'FFB380'
+    color_dark: 'E65C00'
+    color_blood: 'FF1A1A'

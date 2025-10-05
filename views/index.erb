@@ -11,20 +11,19 @@
     />
     <meta property="og:title" content="Hind's Banner" />
     <meta property="og:description" content="Hind's Banner provides SVG banners that can be used in GitHub profiles and READMEs to show support for Palestine, and to raise awareness around Israel's war crimes." />
-    <meta property="og:url" content="https://hinds-banner.vercel.app" />
+    <meta property="og:url" content="<%= @deployment_url %>" />
     <meta property="og:image" content="https://raw.githubusercontent.com/alvii147/hinds-banner/refs/heads/main/img/free-palestine-banner.png" />
     <meta property="og:type" content="website" />
-    <meta name="google-site-verification" content="kQWsHYXMoDIIkm26TdVD0_7PPaQABfDZdnySulF-9Sw" />
     <title>Hind's Banner</title>
     <style>
-        <%- include('./partials/fonts.ejs'); %>
+        <%= erb :"_fonts" %>
         body {
             max-width: 50%;
             min-width: 450px;
             margin: 0 auto;
             padding: 20px;
             background-color: #F1D0C6;
-            background: linear-gradient(to right, #f1dfda, #def4df);
+            background: linear-gradient(to right, #F1DFDA, #DEF4DF);
         }
 
         .mainContainer {
@@ -247,26 +246,24 @@
             Markdown
         </h2>
         <div class="codeBlockContainer">
-            <pre id="markdownSnippet" class="codeBlock">[![Free Palestine](https://hinds-banner.vercel.app/free-palestine?variant=classic)](https://www.pcrf.net/)</pre>
+            <pre id="markdownSnippet" class="codeBlock"></pre>
             <button
                 class="copyButton"
                 onclick="copyMarkdown()"
             >
-                <%- include('./partials/copy.ejs', { color: '333333'}); %>
+                <%= erb :"_copy", locals: { color: '333333' } %>
             </button>
         </div>
         <h2 class="heading">
             HTML
         </h2>
         <div class="codeBlockContainer">
-            <pre id="htmlSnippet" class="codeBlock">&lt;a target="_blank" rel="noopener noreferrer" href="https://www.pcrf.net"&gt;
-  &lt;img alt="Free Palestine" src="https://hinds-banner.vercel.app/free-palestine?variant=classic" />
-&lt;/a&gt;</pre>
+            <pre id="htmlSnippet" class="codeBlock"></pre>
             <button
                 class="copyButton"
                 onclick="copyHTML()"
             >
-                <%- include('./partials/copy.ejs', { color: '333333'}); %>
+                <%= erb :"_copy", locals: { color: '333333' } %>
             </button>
         </div>
         <h2 class="heading">
@@ -285,7 +282,7 @@
                         id="banner"
                         class="banner"
                         alt="Free Palestine"
-                        src="https://hinds-banner.vercel.app/free-palestine?variant=classic"
+                        src="/free-palestine?variant=classic"
                         width="100%"
                     />
                 </a>
@@ -342,7 +339,6 @@
         </div>
     </div>
     <script>
-        const baseURL = 'https://hinds-banner.vercel.app';
         const altTextMap = {
             'free-palestine': 'Free Palestine',
             'genocide-watch': 'Genocide Watch',
@@ -413,7 +409,7 @@
             }
 
             const altText = altTextMap[bannerTypeSelect.value];
-            const url = `${baseURL}/${bannerTypeSelect.value}?variant=${bannerVariantSelect.value}`;
+            const url = `${window.location.origin}/${bannerTypeSelect.value}?variant=${bannerVariantSelect.value}`;
             const redirect = prependURLScheme(bannerRedirectInput.value);
 
             markdownPreBlock.textContent = `[![${altText}](${url})](${redirect})`;
@@ -426,6 +422,8 @@
             bannerImg.altText = altText;
             bannerImg.src = url;
         };
+
+        updateBanner();
     </script>
 </body>
 </html>

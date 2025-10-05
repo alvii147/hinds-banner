@@ -1,6 +1,6 @@
 <defs>
-    <%- include('./fishnet.ejs'); %>
-    <%- include('./olives.ejs'); %>
+    <%= erb :"_fishnet" %>
+    <%= erb :"_olives" %>
 </defs>
 <rect x="4" y="0" width="4" height="256" class="colorLight">
     <animate attributeName="height" from="0" to="256" dur="2s" fill="freeze"/>

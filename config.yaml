@@ -1,5 +1,5 @@
 deployment:
-  url: https://hinds-banner.sliplane.app
+  url: https://hinds-banner.up.railway.app
 
 palestine-datasets:
   url: https://data.techforpalestine.org

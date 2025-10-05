@@ -4,8 +4,6 @@ deployment:
 palestine-datasets:
   url: https://data.techforpalestine.org
 
-port: 3000
-
 variants:
   classic:
     color_background_primary: 'FFFFFF'

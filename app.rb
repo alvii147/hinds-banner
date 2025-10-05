@@ -6,8 +6,6 @@ require_relative "lib/utils"
 
 config = YAML.load_file("config.yaml")
 
-set :port, config["port"]
-
 get "/free-palestine" do
   variant_config = config["variants"][params["variant"]] ||= config["variants"]["classic"]
   variant_config.each do |key, value|

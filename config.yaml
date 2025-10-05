@@ -1,5 +1,5 @@
 deployment:
-  url: https://hinds-banner.fly.dev
+  url: https://hinds-banner.sliplane.app
 
 palestine-datasets:
   url: https://data.techforpalestine.org

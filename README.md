@@ -15,7 +15,7 @@ The **Free Palestine Banner** raises awareness around the genocide being committ
 [![Free Palestine](https://hinds-banner.vercel.app/free-palestine?variant=classic)](https://www.pcrf.net)
 ```
 
-This should result in the following banner that links to the [Palestine Children's Relief Fund website](https://www.pcrf.net):
+This display the following banner, linked to the [Palestine Children's Relief Fund](https://www.pcrf.net):
 
 [![Free Palestine](https://hinds-banner.vercel.app/free-palestine?variant=classic)](https://www.pcrf.net)
 
